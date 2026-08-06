@@ -7,7 +7,7 @@ Purpose     : Profiles the Silver layer to confirm row counts, uniqueness,
 
 Input       : silver_shipping_data
 
-Output      : silver_shipping_data
+Output      : Data profiling and validation result sets
 
 Project     : End-to-End E-Commerce Shipping Analytics
 Platform    : Microsoft Fabric
@@ -44,7 +44,7 @@ SELECT
     SUM(CASE WHEN Product_Importance IS NULL THEN 1 ELSE 0 END) AS Product_Importance,
     SUM(CASE WHEN Gender IS NULL THEN 1 ELSE 0 END) AS Gender,
     SUM(CASE WHEN Discount_Offered IS NULL THEN 1 ELSE 0 END) AS Discount_Offered,
-    SUM(CASE WHEN Weight_in_Grams IS NULL THEN 1 ELSE 0 END) AS Weight_in_Grsms
+    SUM(CASE WHEN Weight_in_Grams IS NULL THEN 1 ELSE 0 END) AS Weight_in_Grams
 FROM silver_shipping_data;
 
 
