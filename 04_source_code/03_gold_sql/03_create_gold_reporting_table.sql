@@ -2,11 +2,11 @@
 Script Name : 03_create_gold_reporting_table.sql
 
 Purpose     : Creates the gold table structure to load incremental processed data
-              through usp_Fact_Shipping_Performance SP
+              through usp_load_fact_shipping_performance SP
 
-Input       : n/a
+Input       : None
 
-Output      : n/a
+Output      : Fact_Shipping_Performance
 
 Project     : End-to-End E-Commerce Shipping Analytics
 Platform    : Microsoft Fabric
