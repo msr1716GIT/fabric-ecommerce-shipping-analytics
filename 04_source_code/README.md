@@ -5,7 +5,6 @@ This section contains the source code used to build the end-to-end Microsoft Fab
 | Folder | Purpose |
 |---------|---------|
 | **01_data_ingestion** | Contains the Spark SQL notebook used to ingest the source CSV file into the Bronze layer. The notebook performs schema inference, creates a temporary view, and materializes the Bronze Delta table. |
-| **02_bronze_sql** | Contains supporting SQL scripts used to validate and inspect the raw Bronze data after ingestion. No business transformations are applied at this stage. |
 | **03_silver_sql** | Contains the T-SQL scripts used to standardize data types, validate the dataset, implement business logic, and prepare the Silver layer for downstream reporting. |
 | **04_gold_sql** | Contains the T-SQL scripts used to build the final Gold reporting table, including the implementation of business-friendly attributes required for analytics. |
 | **05_stored_procedure** | Contains the stored procedure implementing incremental loading using the MERGE (UPSERT / SCD Type 1) pattern to efficiently maintain the Gold reporting table. |
