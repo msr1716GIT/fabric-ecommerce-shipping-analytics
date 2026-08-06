@@ -40,8 +40,9 @@ Calculates the total number of delayed orders.
 ## Average Customer Rating
 
 ```DAX
-Avg Customer Rating = AVERAGE(Fact_Shipping_Performance[Customer_Rating])
-…
+Avg Customer Rating =
+AVERAGE(Fact_Shipping_Performance[Customer_Rating])
+```
 
 Description
 
