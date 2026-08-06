@@ -4,13 +4,13 @@ This section contains the source code used to build the end-to-end Microsoft Fab
 
 | Folder | Purpose |
 |---------|---------|
-| **01_data_ingestion** | Contains the Spark SQL notebook used to ingest the source CSV file into the Bronze layer. The notebook performs schema inference, creates a temporary view, and materializes the Bronze Delta table. |
-| **03_silver_sql** | Contains the T-SQL scripts used to standardize data types, validate the dataset, implement business logic, and prepare the Silver layer for downstream reporting. |
-| **04_gold_sql** | Contains the T-SQL scripts used to build the final Gold reporting table, including the implementation of business-friendly attributes required for analytics. |
-| **05_stored_procedure** | Contains the stored procedure implementing incremental loading using the MERGE (UPSERT / SCD Type 1) pattern to efficiently maintain the Gold reporting table. |
-| **06_row_level_security** | Contains the Row-Level Security (RLS) implementation used to filter data based on Microsoft Entra ID for report security testing. |
-| **07_dax_measures** | Contains the DAX measures created for the Power BI Semantic Model to support KPI calculations and interactive reporting. |
-| **08_pipeline** | Contains the Microsoft Fabric Data Pipeline used to orchestrate the end-to-end workflow from data ingestion. |
+| **01_data_ingestion (Bronze)** | Contains the Spark SQL notebook used to ingest the source CSV file into the Bronze layer. The notebook performs schema inference, creates a temporary view, and materializes the Bronze Delta table. |
+| **02_silver_sql** | Contains the T-SQL scripts used to standardize data types, validate the dataset, implement business logic, and prepare the Silver layer for downstream reporting. |
+| **03_gold_sql** | Contains the T-SQL scripts used to build the final Gold reporting table, including the implementation of business-friendly attributes required for analytics. |
+| **04_stored_procedure** | Contains the stored procedure implementing incremental loading using the MERGE (UPSERT / SCD Type 1) pattern to efficiently maintain the Gold reporting table. |
+| **05_row_level_security** | Contains the Row-Level Security (RLS) implementation used to filter data based on Microsoft Entra ID for report security testing. |
+| **06_dax_measures** | Contains the DAX measures created for the Power BI Semantic Model to support KPI calculations and interactive reporting. |
+| **07_pipeline** | Contains the Microsoft Fabric Data Pipeline used to orchestrate the end-to-end workflow from data ingestion. |
 
 ## Implementation Workflow
 
@@ -18,10 +18,7 @@ This section contains the source code used to build the end-to-end Microsoft Fab
 Source CSV
     │
     ▼
-Data Ingestion
-    │
-    ▼
-Bronze
+Data Ingestion (Bronze)
     │
     ▼
 Silver
@@ -40,5 +37,6 @@ Power BI Dashboard
 ```
 
 Each folder contains only the scripts relevant to that stage of the solution, allowing the implementation to be reviewed independently while maintaining a clear engineering workflow.
+
 
 
