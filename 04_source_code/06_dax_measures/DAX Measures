@@ -1,0 +1,48 @@
+# DAX Measures
+
+This document contains the DAX measures used by the Semantic Model and Power BI dashboard.
+
+---
+
+## Total Orders
+
+```DAX
+Total Orders = COUNT(Fact_Shipping_Performance[Order_ID])
+```
+
+Description
+
+Calculates the total number of orders.
+
+---
+
+## On-Time Delivery Rate
+
+```DAX
+On-time Delivery Rate = VAR Total = [Total Orders] VAR OnTime = CALCULATE(COUNT(Fact_Shipping_Performance[Order_ID]), Fact_Shipping_Performance[Delivery_Status] = "On-Time") RETURN DIVIDE(OnTime, Total, 0)
+```
+
+Description
+
+Calculates the percentage of orders delivered on time.
+
+---
+
+## Delayed Orders
+
+```DAX
+Delayed Orders = CALCULATE(COUNT(Fact_Shipping_Performance[Order_ID]), Fact_Shipping_Performance[Delivery_Status] = "Delayed")
+```
+
+Description
+
+Calculates the total number of delayed orders.
+## Average Customer Rating
+
+```DAX
+Avg Customer Rating = AVERAGE(Fact_Shipping_Performance[Customer_Rating])
+…
+
+Description
+
+Calculates average customer rating.
