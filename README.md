@@ -25,13 +25,13 @@ Instead of redesigning the dataset into a traditional star schema, this project 
 
 ## Architecture
 
-> *02_architecture*
+![Solution Architecture](02_architecture/01_solution_architecture.png)
 
 ---
 
 ## Executive Dashboard
 
-> *05_power_bi*
+![Executive Dashboard](05_power_bi/dashboard.png)
 
 ---
 
