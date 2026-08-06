@@ -37,13 +37,11 @@ Instead of redesigning the dataset into a traditional star schema, this project 
 
 ## Repository Structure
 
-```text
-01_project_documentation/
-02_architecture/
-03_data/
-04_source_code/
-05_power_bi/
-```
+- [Project Documentation](01_project_documentation/)
+- [Architecture](02_architecture/)
+- [Data](03_data/)
+- [Source Code](04_source_code/)
+- [Power BI](05_power_bi/)
 
 ---
 
