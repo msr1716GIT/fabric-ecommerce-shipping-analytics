@@ -6,7 +6,7 @@ This section contains the source code used to build the end-to-end Microsoft Fab
 |---------|---------|
 | **01_data_ingestion (Bronze)** | Contains the Spark SQL notebook used to ingest the source CSV file into the Bronze layer. The notebook performs schema inference, creates a temporary view, and materializes the Bronze Delta table. |
 | **02_silver_sql** | Contains the T-SQL scripts used to standardize data types, validate the dataset, implement business logic, and prepare the Silver layer for downstream reporting. |
-| **03_gold_sql** | Contains the T-SQL scripts used to build the final Gold reporting table, including the implementation of business-friendly attributes required for analytics. |
+| **03_gold_sql** | Contains the T-SQL script used to create the final Gold reporting table structure before incremental loading through the MERGE stored procedure. |
 | **04_stored_procedure** | Contains the stored procedure implementing incremental loading using the MERGE (UPSERT / SCD Type 1) pattern to efficiently maintain the Gold reporting table. |
 | **05_row_level_security** | Contains the Row-Level Security (RLS) implementation used to filter data based on Microsoft Entra ID for report security testing. |
 | **06_dax_measures** | Contains the DAX measures created for the Power BI Semantic Model to support KPI calculations and interactive reporting. |
@@ -21,13 +21,16 @@ Source CSV
 Data Ingestion (Bronze)
     │
     ▼
-Silver
+Silver Transformation
     │
     ▼
-Gold
+Silver Row Validation
     │
     ▼
-Stored Procedure
+Gold MERGE Stored Procedure
+    │
+    ▼
+Gold Reporting Table
     │
     ▼
 Semantic Model
