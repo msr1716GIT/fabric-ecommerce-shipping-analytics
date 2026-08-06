@@ -9,5 +9,5 @@ This folder contains the Microsoft Fabric Data Pipeline used to orchestrate the 
 - **pipeline_execution.mp4** – Recorded execution of the completed Fabric pipeline.
 - **README.md** – Documentation for this folder.
 
-The pipeline automates the execution of the Bronze, Silver, and Gold layers, creating a repeatable workflow from data ingestion through reporting.
+The pipeline automates the execution of the Bronze, Silver, and Gold layers, creating a repeatable end-to-end data engineering workflow.
 
